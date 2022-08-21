@@ -2,14 +2,14 @@ const http = require("http");
 
 class Server {
 	constructor({
-		router,
+		controller,
 		port,
 	            }) {
-		this.router = router;
+		this.controller = controller;
 		this.port = port;
 
 		this.server = http.createServer((req, res) => {
-			this.router.handle(req,res)
+			this.controller.handle(req,res)
 		})
 	}
 

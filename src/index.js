@@ -1,11 +1,11 @@
 const Server = require('./server');
-const Router = require('./router');
-const routes = require('./router/routes');
+const Controller = require('./controller');
+const routes = require('./routes');
 
 const PORT = process.env.PORT || 3000
 
 const server = new Server({
-	router: new Router(routes),
+	controller: new Controller(routes),
 	port: PORT,
 }).start(() => {
 	console.log('ПАЕХАЛЕ ЕПТА')
